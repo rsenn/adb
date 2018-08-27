@@ -22,5 +22,7 @@ adb_CFLAGS = -O2 -g -Wall -Wno-unused-parameter \
 
 LIBS = -lpthread -lz $(libs_deps)
 
-adb_LDADD = $(top_srcdir)/libcutils/libcutils.a $(top_srcdir)/libzipfile/libzipfile.a
+LDFLAGS += $(AM_LDFLAGS)
+
+adb_LDADD = $(top_builddir)/libcutils/libcutils.a $(top_builddir)/libzipfile/libzipfile.a
 
